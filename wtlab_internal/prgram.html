@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1>River Details</h1>
+    <input type="text" id="ipc" placeholder="enter River Name">
+    <br>
+    <button onclick="myfunc()">search</button>
+<br>
+<p id="demo"></p>
+
+<script>
+    function myfunc()
+    {
+const penalcode = [
+    {
+         
+        "River_Name":"Kaveri",
+         "District":["Bangalore","Mysore","trichupli","tanjavur"],
+        "Source":"Tala Kaveri",
+        "Mouth":"Bay of Bengal",
+        "Length":"805  KM"
+    },
+    {
+      "River_Name":"Ganga",
+        "District":["patna","Vanarasi","Prayagraj","Haridwar"],
+        "Source":"Gandotri Himalyas",
+        "Mouth":"Bay of Bengal",
+        "Length":"2,510  KM"
+    },
+    {
+        
+      "River_Name":"Yamuna",
+        "District":["Agra","Delhi","Nabipur","Kalsi"],
+        "Source":"yamunotri",
+        "Mouth":"Prayagraj",
+        "Length":"1,376  KM"
+      
+    },
+    {
+        
+      "River_Name":"Bramhaputra",
+        "District":["Guwahati","Diburgadh","Tejpur","Mayang"],
+        "Source":"Himalayas",
+        "Mouth":"Bay of Bengal",
+        "Length":"3,848  KM"
+      
+    }
+]
+let y = document.getElementById("ipc").value;
+let x = penalcode.find(penalcode => penalcode.River_Name === y);
+if(x==undefined)
+{
+    document.getElementById("demo").innerHTML="enter valid River_Name";
+    document.getElementById("demo").style.backgroundColor="red";
+}
+else
+{
+let z = "River: "+x.River_Name+"<br> "+"District : "+x.District+" "+"<br>"+"Source : "+x.Source+" "+"<br>"+"Mouth:"+x.Mouth+"<br>"+"Length:"+x.Length;
+document.getElementById("demo").innerHTML = z;
+}
+    
+   }
+</script>
+
+</body>
+</html>
